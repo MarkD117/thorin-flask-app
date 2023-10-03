@@ -9,12 +9,25 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-# python decorator wraps function
-# functions returns render_template index,html which opens the
+# python decorator wraps function. The route decorator binds the funtion to
+# itself. functions returns render_template index,html which opens the
 # index.html file
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+# The route decorator binds the funtion to itself so that whenever that
+# route is called, the function is called. In this case, rendering the
+# html page
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 # __main__ is the default module in python. It is the first one we run
@@ -23,4 +36,4 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
-        debug=True)
+        debug=True)  # Debug should only be true when testing application
