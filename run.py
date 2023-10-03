@@ -19,7 +19,7 @@ def index():
 
 # The route decorator binds the funtion to itself so that whenever that
 # route is called, the function is called. In this case, rendering the
-# html page
+# html page. This function is also called the view.
 @app.route("/about")
 def about():
     return render_template("about.html")
@@ -28,6 +28,11 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+
+@app.route("/careers")
+def careers():
+    return render_template("careers.html")
 
 
 # __main__ is the default module in python. It is the first one we run

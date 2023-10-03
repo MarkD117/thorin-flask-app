@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Flask</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <!-- Jinja templating method of url to call functions to show pages -->
+
+            <!-- Double curly brackets contain an 'expression', which is outputting something
+            either onto the screen, or in this case, into our href -->
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('careers') }}">Careers</a></li>
+        </ul>
+    </nav>
+
+    <!-- defining a block, or an area, that we can inject content into from other pages. -->
+
+    <!-- The curly bracket and percentage are for statements that control the flow of our template, such
+    as a for-loop, if-statement, or this block element. -->
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
