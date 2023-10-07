@@ -14,10 +14,12 @@
 		leave on other business, welcomed a fourteenth to fill into their party.
     </p>
 
+    <!-- for loop iterates through each member in the company object -->
     {% for member in company %}
 
         <div class="row featurette">
 
+            <!-- for loop alternates position of every second text and image -->
             {% if loop.index % 2 != 0 %}
 
                 <div class="col-md-7">
@@ -42,6 +44,7 @@
 
         </div>
 
+        <!-- prevents hr element from showing after the last item in the list -->
         {% if loop.index != loop.length %}
 
             <hr class="featurette-divider">

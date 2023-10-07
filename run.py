@@ -12,15 +12,17 @@ app = Flask(__name__)
 
 # python decorator wraps function. The route decorator binds the funtion to
 # itself. functions returns render_template index,html which opens the
-# index.html file
+# index.html file. The route decorator binds the funtion to itself so
+# that whenever that route is called, the function is called. In this case,
+# rendering the html page. This function is also called the view.
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# The route decorator binds the funtion to itself so that whenever that
-# route is called, the function is called. In this case, rendering the
-# html page. This function is also called the view.
+# opening the company.json file as 'read' only and loading it to a variable
+# called data. Argument is then assigned renaming the
+# data variable to 'company'
 @app.route("/about")
 def about():
     data = []
