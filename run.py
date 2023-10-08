@@ -53,7 +53,7 @@ def about_member(member_name):
             if obj["url"] == member_name:
                 member = obj
     # The 1st member is the variable name being passed into the html file
-    # The 2nd member is the member object created on line 44
+    # The 2nd member is the member object created on line 49
     return render_template("member.html", member=member)
 
 
