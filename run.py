@@ -31,6 +31,10 @@ def about():
     return render_template("about.html", page_title="About", company=data)
 
 
+# view routing to the member.html page. creates an object called member
+# opens the company.json file as read only and assigns it to data variable.
+# For loop iterates through object checking for url value and assigning it
+# to the member variable. The member.html template is then rendered.
 @app.route("/about/<member_name>")
 def about_member(member_name):
     member = {}
@@ -39,6 +43,8 @@ def about_member(member_name):
         for obj in data:
             if obj["url"] == member_name:
                 member = obj
+    # The 1st member is the variable name being passed into the html file
+    # The 2nd member is the member object created on line 40
     return render_template("member.html", member=member)
 
 
